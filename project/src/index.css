@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbar but keep scrolling */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+
+/* Leaflet map dark theme overrides */
+.leaflet-container {
+  background: #0f172a;
+  font-family: inherit;
+}
+.leaflet-control-attribution {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #64748b !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: #38bdf8 !important;
+}
+.leaflet-control-zoom a {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+.leaflet-control-zoom a:hover {
+  background: #334155 !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.leaflet-popup-tip {
+  background: #f8fafc;
+}
+
+/* Report marker pulse ring */
+.report-marker {
+  position: relative;
+}
+.report-marker-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  border: 2px solid #fbbf24;
+  animation: marker-pulse 1.5s ease-out infinite;
+}
+@keyframes marker-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
